@@ -1,0 +1,661 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.astronomoumenos.com/ontologies/astr.owl#"
+     xml:base="http://www.astronomoumenos.com/ontologies/astr.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ns1="http://www.astronomoumenos.com/ontologies/astr.owl#">
+    <owl:Ontology rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#ancestorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#ancestorOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#isInSameFamilyWith"/>
+        <owl:inverseOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#descendantOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#appearsTogetherWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#appearsTogetherWith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#claimAbout -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#claimAbout">
+        <owl:inverseOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#hasClaim"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#claimedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#claimedBy">
+        <rdfs:range rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Source"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#descendantOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#descendantOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#isInSameFamilyWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#directAncestorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#directAncestorOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#ancestorOf"/>
+        <owl:inverseOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#directDescendantOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#directDescendantOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#directDescendantOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#descendantOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#followedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#followedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#appearsTogetherWith"/>
+        <owl:inverseOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#precededBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasAttributedAuthor -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasAttributedAuthor">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#hasContributor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasAuthor -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasAuthor">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#hasContributor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasClaim -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasClaim"/>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasContributor -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasContributor">
+        <rdfs:domain rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Work"/>
+        <rdfs:range rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasEditor -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasEditor">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#hasContributor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasWitness -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasWitness">
+        <owl:inverseOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#witnessOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasWitnessInMS -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasWitnessInMS">
+        <owl:inverseOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#msContainsWork"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasWitness"/>
+            <rdf:Description rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#inMS"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#immediatelyFollowedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#immediatelyFollowedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#followedBy"/>
+        <owl:inverseOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#immediatelyPrecededBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#immediatelyPrecededBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#immediatelyPrecededBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#precededBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#inMS -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#inMS">
+        <owl:inverseOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#msContains"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#appearsTogetherWith"/>
+            <rdf:Description rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#inMS"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#isInSameFamilyWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#isInSameFamilyWith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#locatedIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:range rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#msContains -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#msContains"/>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#msContainsWork -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#msContainsWork"/>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#msContainsWorkFromAuthor -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#msContainsWorkFromAuthor">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#msContains"/>
+            <rdf:Description rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#witnessOf"/>
+            <rdf:Description rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasContributor"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#precededBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#precededBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#appearsTogetherWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#witnessOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#witnessOf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasApproximateDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasApproximateDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#hasDate"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasApproximateEndDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasApproximateEndDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#hasEndDate"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasApproximateStartDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasApproximateStartDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#hasStartDate"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasDate"/>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasEndDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasEndDate"/>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasExactDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasExactDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#hasDate"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasExactEndDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasExactEndDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#hasEndDate"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasExactStartDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasExactStartDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#hasStartDate"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasFolioEnd -->
+
+    <owl:DatatypeProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasFolioEnd">
+        <rdfs:comment>Used to define the end of a folio range for a witness. A witness may have more than one folio range if for example its text is interupted or not present on an intervening span of folios.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasFolioStart -->
+
+    <owl:DatatypeProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasFolioStart">
+        <rdfs:comment>Used to define the start of a folio range for a witness. A witness may have more than one folio range if for example its text is interupted or not present on an intervening span of folios.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasID">
+        <rdfs:comment>Used when the source for claims about an item has an identifier referring to that item.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasPageEnd -->
+
+    <owl:DatatypeProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasPageEnd">
+        <rdfs:comment>Used to define the end of a page range for a witness. A witness may have more than one page range if for example its text is interupted or not present on an intervening span of pages.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasPageStart -->
+
+    <owl:DatatypeProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasPageStart">
+        <rdfs:comment>Used to define the start of a page range for a witness. A witness may have more than one page range if for example its text is interupted or not present on an intervening span of pages.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasShelfmark -->
+
+    <owl:DatatypeProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasShelfmark"/>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#hasStartDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#hasStartDate"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#Author -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Author">
+        <rdfs:subClassOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Contributor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#Catalog -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Catalog">
+        <rdfs:subClassOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Source"/>
+        <owl:disjointWith rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#CriticalEdition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#City -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#City">
+        <rdfs:subClassOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#Commentary -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Commentary">
+        <rdfs:subClassOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Work"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#Contributor -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Contributor">
+        <rdfs:subClassOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#Country -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Country">
+        <rdfs:subClassOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#CriticalEdition -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#CriticalEdition">
+        <rdfs:subClassOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Source"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#ExtantManuscript -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#ExtantManuscript">
+        <rdfs:subClassOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Manuscript"/>
+        <owl:disjointWith rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#LostManuscript"/>
+        <owl:disjointWith rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#ProposedManuscript"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#GenericWork -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#GenericWork">
+        <rdfs:subClassOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Work"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#Institution -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Institution">
+        <rdfs:subClassOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#Location -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Location"/>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#LostManuscript -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#LostManuscript">
+        <rdfs:subClassOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Manuscript"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#Manuscript -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Manuscript"/>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#ManuscriptLA -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#ManuscriptLA">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#hasWitness"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#witnessOf"/>
+                        <owl:someValuesFrom rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#WorkLA"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#Person -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Person"/>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#ProposedManuscript -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#ProposedManuscript">
+        <rdfs:subClassOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Manuscript"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#Recension -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Recension">
+        <rdfs:subClassOf rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Work"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#Source -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Source"/>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#Witness -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Witness"/>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#Work -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Work"/>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#WorkLA -->
+
+    <owl:Class rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#WorkLA"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#2055302 -->
+
+    <owl:NamedIndividual rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#2055302">
+        <rdf:type rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#GenericWork"/>
+        <hasAuthor rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#4606517"/>
+        <hasWitness rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#4610332"/>
+        <rdfs:label>Catoptrica</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#4606517 -->
+
+    <owl:NamedIndividual rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#4606517">
+        <rdf:type rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Author"/>
+        <rdfs:label>Euclides</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#4610332 -->
+
+    <owl:NamedIndividual rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#4610332">
+        <rdf:type rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Witness"/>
+        <immediatelyFollowedBy rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#8780459"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#7914600 -->
+
+    <owl:NamedIndividual rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#7914600">
+        <rdf:type rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Witness"/>
+        <immediatelyPrecededBy rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#8780459"/>
+        <inMS rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#8552650"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#8552650 -->
+
+    <owl:NamedIndividual rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#8552650">
+        <rdf:type rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#ExtantManuscript"/>
+        <rdfs:label>Cambridge University Library Fonds ancien Nn. III. 08 (2619)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#8780459 -->
+
+    <owl:NamedIndividual rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#8780459">
+        <rdf:type rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#Witness"/>
+        <hasFolioEnd>34v</hasFolioEnd>
+        <hasFolioStart>15r</hasFolioStart>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#9036913 -->
+
+    <owl:NamedIndividual rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#9036913">
+        <rdf:type rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#GenericWork"/>
+        <rdf:type rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#WorkLA"/>
+        <hasWitness rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#7914600"/>
+        <rdfs:label>Optica</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.astronomoumenos.com/ontologies/astr.owl#9903453 -->
+
+    <owl:NamedIndividual rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#9903453">
+        <rdf:type rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#GenericWork"/>
+        <hasAuthor rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#4606517"/>
+        <hasWitness rdf:resource="http://www.astronomoumenos.com/ontologies/astr.owl#8780459"/>
+        <rdfs:label>Phaenomena</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Location"/>
+            <rdf:Description rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Manuscript"/>
+            <rdf:Description rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Person"/>
+            <rdf:Description rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Source"/>
+            <rdf:Description rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Witness"/>
+            <rdf:Description rdf:about="http://www.astronomoumenos.com/ontologies/astr.owl#Work"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
